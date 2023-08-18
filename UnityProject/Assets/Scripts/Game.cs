@@ -7,7 +7,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Transform panel1;
 
-    //private int CurLevel = 1;
+    private int CurLevel = 1;
     public GameObject wrongGo;
 
     public GameObject rightGo;
@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
 
     private int findNum = 0;
     private bool isShowButton = false;
+
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class Game : MonoBehaviour
         }
         
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < Level2.totalRiskNum; i++)
         {
             var trans = panel1.Find("Image/Btn" + (i + 1).ToString());
             if (trans.TryGetComponent<Button>(out var btn))
@@ -85,7 +86,7 @@ public class Game : MonoBehaviour
 
     private void ButtonTestClickHandler()
     {
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < Level2.totalRiskNum; i++)
         {
            var trans = panel1.Find("Image/Btn" + (i + 1).ToString());
            if (trans.TryGetComponent<Image>(out Image img))
@@ -132,7 +133,7 @@ public class Game : MonoBehaviour
             go.transform.localScale /= 2;
             findNum += 1;
             Text curFindNum = panel1.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
-            curFindNum.text = $"{findNum}/12";
+            curFindNum.text = $"{findNum}/{Level2.totalRiskNum}";
 
             Slider slider = panel1.Find("Image/Slider").GetComponent<Slider>();
             slider.value = findNum;
@@ -140,7 +141,7 @@ public class Game : MonoBehaviour
             Text rightTip = panel1.Find("Image/Text_RightTip").GetComponent<Text>();
 
             string fieldname = string.Format("risk_{0}_info", v);
-            Type type = typeof(Level1);
+            Type type = typeof(Level2);
             FieldInfo field = type.GetField(fieldname, BindingFlags.Static | BindingFlags.Public);
             string value = (string)field.GetValue(null);
             Debug.Log($"{fieldname}{ value}");
@@ -148,7 +149,7 @@ public class Game : MonoBehaviour
 
 
             //todo:12通关，恭喜
-            if (findNum >= Level1.totalRiskNum)
+            if (findNum >= Level2.totalRiskNum)
             {
                 panel1.Find("RawImage").gameObject.SetActive(true); 
             }
