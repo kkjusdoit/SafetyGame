@@ -1,6 +1,6 @@
 
 
-public class Level1
+public class Level1 : LevelBase
 {
     public static int totalRiskNum = 12;
 

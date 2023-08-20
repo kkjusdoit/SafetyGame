@@ -7,7 +7,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Transform panel1;
 
-    private int CurLevel = 1;
+    private int CurLevel = 0;
     public GameObject wrongGo;
 
     public GameObject rightGo;
@@ -24,7 +24,7 @@ public class Game : MonoBehaviour
         SetImageScale();
 
 
-
+        
         //if (ratioHeight <= 1 && ratioHeight <= 1)
         //{
         //    //选个大的
