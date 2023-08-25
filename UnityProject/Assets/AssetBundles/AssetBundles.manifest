@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 3579137594
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: mark.sha
+      Dependencies: {}
+    Info_1:
+      Name: level
+      Dependencies: {}

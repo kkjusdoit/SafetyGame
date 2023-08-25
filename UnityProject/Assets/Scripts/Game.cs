@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private Transform panel1;
+    [SerializeField] private Transform CanvasTrans;
 
     private int CurLevel = 0;
     public GameObject wrongGo;
@@ -17,9 +17,13 @@ public class Game : MonoBehaviour
     private int findNum = 0;
     private bool isShowButton = false;
 
+    Transform panel1;
 
     private void Start()
     {
+
+        //GameObject gameObject = Instantiate();
+
         // 获取panel宽高
         SetImageScale();
 
