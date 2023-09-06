@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-public class RiskInfo
+public static class RiskInfo
 {
-    public List<List<string>> RiskTexts = new()
+    public static List<List<string>> RiskTexts = new()
     {
         new List<string>() {//1
             "视线不佳，容易受伤",
@@ -93,7 +93,6 @@ public class RiskInfo
         new List<string>(){ // 6
             "急救箱损坏",
             "梯子下地面电线等混乱",
-            "碎玻璃瓶",
             "不能使用压缩空气清洗身体",
             "孔洞未上盖，有掉落摔伤风险",
             "锤子工具直接乱扔",
@@ -115,15 +114,15 @@ public class RiskInfo
             "桌上工具已损坏",
             "凳子木条已损坏",
             "地上电线容易把人绊倒", //对错 出来 加个动画效果
+            "碎玻璃瓶需要清理",
+
         },
         new List<string>(){ // 7
             "绊倒风险",
             "材料堆放混乱，应摆放整齐",
             "徒手搬运重物容易摔倒",
+            "地板破洞过大",
             "地板损坏，人与机械可能掉落",
-            "材料堆叠在通道上",
-            "地板破洞过大",
-            "地板破洞过大",
             "栏杆没有护脚板",
         },
         new List<string>(){//8
