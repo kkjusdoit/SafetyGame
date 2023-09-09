@@ -152,9 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58dcda895905014f9b6b03c7aacf4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasTrans: {fileID: 1306224716}
+  BottomTrans: {fileID: 676552737}
+  MidTrans: {fileID: 202103269}
+  TopTrans: {fileID: 383168221}
   wrongGo: {fileID: 7191946272941529992, guid: 9619dc36966b2264ab68554061c3ba7d, type: 3}
   rightGo: {fileID: 9086802312243892705, guid: 14bb563e80ed38644b95263dedbd1432, type: 3}
+  time: 0
 --- !u!4 &25014315
 Transform:
   m_ObjectHideFlags: 0
@@ -476,7 +479,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4198113, g: 0.8794969, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

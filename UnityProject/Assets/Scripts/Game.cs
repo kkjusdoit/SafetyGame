@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private Transform CanvasTrans;
+    [SerializeField] private Transform BottomTrans;
+    [SerializeField] private Transform MidTrans;
+    [SerializeField] private Transform TopTrans;
+
 
     private int CurLevel = 1;
     public GameObject wrongGo;
@@ -16,16 +19,20 @@ public class Game : MonoBehaviour
     private RectTransform wrongTrans = null;
 
     private int findNum = 0;
-    private bool isShowButton = false;
+    //private bool isShowButton = false;
 
     Transform panelTrans;  //界面
     Transform passTrans; //通关
+    Transform levelInfoTrans;//关卡信息
     List<string> riskInfoList;
+
+    public float time;
 
     private void Start()
     {
         //加载panel
         ShowPanel();
+        InvokeRepeating("IncrementTime", 1f, 1f);
     }
 
     private void ShowPanel()
@@ -35,17 +42,29 @@ public class Game : MonoBehaviour
             string prefabName = "Panel" + CurLevel.ToString();
             riskInfoList = RiskInfo.RiskTexts[CurLevel - 1];
             string assetPath = string.Format("Panel/Levels/{0}", prefabName);
-            LoadPanel(assetPath, CanvasTrans, ref panelTrans);
+            LoadPanel(assetPath, BottomTrans, ref panelTrans);
             if (panelTrans == null)
             {
                 Debug.LogError("load panel failed");
                 return;
             }
 
+            //show level info
+            if (levelInfoTrans == null)
+            {
+                LoadPanel("Panel/LevelInfo", MidTrans, ref levelInfoTrans);
+            }
+            //update level info
+            UpdateLevelInfo();
+
             //控件注册
             BindBtn();
 
             SetImageScale();
+
+            Reset();
+
+
         }
         else  //如果当前有就关闭
         {
@@ -53,6 +72,13 @@ public class Game : MonoBehaviour
             panelTrans = null;
             ShowPanel();
         }
+    }
+
+    private void Reset()
+    {
+        findNum = 0;
+        time = 0;
+        IncrementTime();
     }
 
     private void BindBtn()
@@ -65,15 +91,6 @@ public class Game : MonoBehaviour
         {
             Debug.LogError("Button not found.");
         }
-        if (panelTrans.Find("Image/ButtonTest").TryGetComponent<Button>(out var btnTest))
-        {
-            btnTest.onClick.AddListener(ButtonTestClickHandler);
-        }
-        else
-        {
-            Debug.LogError("Button not found.");
-        }
-
 
         for (int i = 0; i < riskInfoList.Count; i++)
         {
@@ -111,33 +128,6 @@ public class Game : MonoBehaviour
         imgTrans.localScale /= ratio;
     }
 
-    private void ButtonTestClickHandler()
-    {
-        for (int i = 0; i < riskInfoList.Count; i++)
-        {
-           var trans = panelTrans.Find("Image/Btn" + (i + 1).ToString());
-           if (trans.TryGetComponent<Image>(out Image img))
-           {
-                //img.enabled = !img.enabled;
-                if (isShowButton)
-                {
-                    img.color = new Color(1, 0, 0, 1);
-
-                }
-                else
-                {
-                    img.color = Color.clear;
-
-                }
-                isShowButton = !isShowButton;
-            }
-            else
-           {
-               Debug.LogError("Button not found.");
-           }
-        }
-    }
-
     private void ButtonClickHandler(int v, Transform transform)
     {
         if (wrongTrans != null && wrongTrans.gameObject.activeSelf)
@@ -152,21 +142,18 @@ public class Game : MonoBehaviour
             go.transform.name = "right";
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale /= 2;
+
             findNum += 1;
-            Text curFindNum = panelTrans.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
-            curFindNum.text = $"{findNum}/{riskInfoList.Count}";
 
-            Slider slider = panelTrans.Find("Image/Slider").GetComponent<Slider>();
-            slider.value = findNum;
+            //更新关卡信息
+            UpdateLevelInfo(v);
 
-            Text rightTip = panelTrans.Find("Image/Text_RightTip").GetComponent<Text>();
 
             //string fieldname = string.Format("risk_{0}_info", v);
             //Type type = typeof(Level2);
             //FieldInfo field = type.GetField(fieldname, BindingFlags.Static | BindingFlags.Public);
             //string value = (string)field.GetValue(null);
             //Debug.Log($"{fieldname}{ value}");
-            rightTip.text = riskInfoList[v];
 
 
             //todolkk:12通关，恭喜
@@ -178,11 +165,76 @@ public class Game : MonoBehaviour
         }
     }
 
+
+    private void UpdateLevelInfo(int index = -1)
+    {
+        if (levelInfoTrans == null)
+        {
+            Debug.LogErrorFormat("level info trans is null");
+            return;
+        }
+
+        Text curFindNum = levelInfoTrans.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
+        curFindNum.text = $"{findNum}/{riskInfoList.Count}";
+
+        Text levelTxt = levelInfoTrans.Find("Image/CurLevelText").GetComponent<Text>();
+        levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
+
+        Slider slider = levelInfoTrans.Find("Image/Slider").GetComponent<Slider>();
+        slider.value = findNum;
+
+        Transform rightTipTrans = levelInfoTrans.Find("Image/Text_RightTip");
+        if (index >= 0)
+        {
+            rightTipTrans.gameObject.SetActive(true);
+            Text rightTip = rightTipTrans.GetComponent<Text>();
+            rightTip.text = riskInfoList[index];
+        }
+        else
+        {
+            rightTipTrans.gameObject.SetActive(false);
+
+        }
+
+    }
+
+    void IncrementTime()
+    {
+        bool updateTime = false;
+        if (passTrans == null)
+        {
+            updateTime = true;
+        }
+        else
+        {
+            if (!passTrans.gameObject.activeSelf)
+            {
+                updateTime = true;
+            }
+        }
+        if (updateTime)
+        {
+
+            if (levelInfoTrans == null)
+            {
+                Debug.LogErrorFormat("level info trans is null");
+                return;
+            }
+
+            Text curFindNum = levelInfoTrans.Find("Image/CountDownText").GetComponent<Text>();
+            curFindNum.text = $"已用时：{time}";
+            time++;
+        }
+
+    }
+
+
+
     private void OnLevelPass()
     {
         if (passTrans == null)
         {
-            LoadPanel("Panel/PassPanel", CanvasTrans, ref passTrans);
+            LoadPanel("Panel/PassPanel", TopTrans, ref passTrans);
             var btn = passTrans.Find("Button").GetComponent<Button>();
             btn.onClick.AddListener(() => GoToNextLevel());
         }
@@ -196,7 +248,8 @@ public class Game : MonoBehaviour
     {
         passTrans.gameObject.SetActive(false);
         CurLevel++;
-        if (riskInfoList.Count <= CurLevel)
+        Debug.Log($" curLevel :{CurLevel}   count: {RiskInfo.RiskTexts.Count}");
+        if (CurLevel > RiskInfo.RiskTexts.Count)
         {
             if (passTrans != null)
             {
