@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06140977, g: 0.5660378, b: 0.10987822, a: 1}
+  m_Color: {r: 0.07887519, g: 0.4716981, b: 0.051174805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -257,18 +257,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: fa5cb427bf9d1d34982400ca5b2d6c8c, type: 3}
-    m_FontSize: 40
-    m_FontStyle: 1
+    m_FontSize: 52
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 55
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8FD9\u662F\u4E00\u4E2A\u89E3\u91CA\u6C49\u5B57\u6700\u5FEB\u7684\u70B9\u70B9\u6EF4\u6EF4\u70B9\u70B9\u6EF4\u6EF4\u70B9\u70B9\u6EF4\u6EF4"
+  m_Text: 
 --- !u!1 &284294499
 GameObject:
   m_ObjectHideFlags: 0
