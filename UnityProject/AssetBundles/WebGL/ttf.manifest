@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2044221949
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e1cbea3f7bfee7676ee1b65624903ae7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: acc87f5f41cb638dcdccc8ca554b5154
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/TTF/AaWuHunTi-2.ttf
+Dependencies: []

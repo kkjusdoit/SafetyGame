@@ -88,12 +88,12 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\TimeFieldDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\TimelinePreferences.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\EditModeInputHandler.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\ClipInspector\ClipInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\TrackGui\TrackResizeHandle.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Move\IMoveItemMode.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\ClipInspector\ClipInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\TimelineWindowAnalytics.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\AnimationClipActions.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\BuiltInCurvePresets.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\AnimationClipActions.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\GroupTrackInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Recording\TimelineRecording.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Audio\AudioPlayableAssetEditor.cs" />
@@ -114,8 +114,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\MenuPriority.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\ClipCurveEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\TimelineAction.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\TimelineClipHandle.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\TrackActions.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\TimelineClipHandle.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Items\MarkerItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\AddDelete\AddDeleteItemModeMix.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\TimelineWindow.cs" />
@@ -178,8 +178,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Audio\AudioTrackInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Sequence\RectangleTool.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\Drawers\Layers\ItemsLayer.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\Modes\TimelineActiveMode.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Cursors\TimelineCursors.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\Modes\TimelineActiveMode.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Signals\SignalUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\CurveDataSource.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\AnimationPlayableAssetEditor.cs" />
@@ -209,11 +209,11 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\TimeFormat.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\State\SequencePath.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\ClipAction.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\AnimationTrackActions.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\Graphics.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\AnimationTrackActions.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Recording\TimelineRecording_PlayableAsset.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\TrackGui\InlineCurveEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\SpacePartitioner.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\TrackGui\InlineCurveEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\TimelineProjectSettings.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Trackhead.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Animation\CurveTreeViewNode.cs" />
@@ -235,9 +235,9 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Utils\EditModeUtils.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\TimelineClipGroup.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\TimelineAssetInspector.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\PropertyCollector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Activation\ActivationTrackEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Sequence\EaseClip.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Utilities\PropertyCollector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\ViewModel\TimelineWindowViewPrefs.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Activation\ActivationTrackInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Utils\ManipulatorsUtils.cs" />
@@ -261,8 +261,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\ItemGui\TimelineItemGUI.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Signals\SignalAssetInspector.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\SequenceContext.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Undo\UndoScope.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\CustomEditors\TrackEditor.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Undo\UndoScope.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\TimelineWindow_StateChange.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Attributes\ShortcutAttribute.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\inspectors\MarkerInspector.cs" />
@@ -642,14 +642,23 @@
      <Reference Include="UnityEditor.UWP.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1c1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Markdig">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="ProtobufNet">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.YamlDotNet">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\Editor\DOTweenEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
@@ -675,26 +684,17 @@
      <Reference Include="log4netPlastic">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <Reference Include="DOTween">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Markdig">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
-     </Reference>
-     <Reference Include="ProtobufNet">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTweenEditor">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\Editor\DOTweenEditor.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -1103,13 +1103,13 @@
       <Project>{406db75e-4363-3498-0f7e-acffc38718cf}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{af8b9caf-cc1e-8df9-07cf-142efc8a0c38}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

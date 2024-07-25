@@ -41,44 +41,44 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IMiddleware.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\SingletonMonoBehaviour.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\DvaState.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageDuck.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\IPageEntity.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\EntityStateElement.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IStoreAccessor.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\CloneUtil.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\StructUtil.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneCategory.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IReducer.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector4SerializationSurrogate.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageState.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector3SerializationSurrogate.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\ISceneConfig.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IStore.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector2SerializationSurrogate.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\JsonUtilSerializeFactory.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\StateUtil.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageEntity.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\StateElement.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\ReducerBase.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\StructStateElement.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneUtil.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\ListStateElement.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\ISerializeFactory.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\Store.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneState.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\EnumUtil.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\UniduxSetting.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\ColorSerializationSurrogate.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\IListExtension.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageDuck.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\IPageData.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\EqualityUtil.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneCategory.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageState.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector3SerializationSurrogate.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneState.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\SceneDuck.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\DvaState.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IMiddleware.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\EntityStateElement.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\StructUtil.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\JsonUtilSerializeFactory.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\StateElement.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\UniduxSetting.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\SingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\ReducerBase.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IState.cs" />
-     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IStateChanged.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector4SerializationSurrogate.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\ISceneConfig.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\Vector2SerializationSurrogate.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\ListStateElement.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\IListExtension.cs" />
      <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\DictionaryExtension.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\CloneUtil.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\StateUtil.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\StructStateElement.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition\PageEntity.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\EnumUtil.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Util\ColorSerializationSurrogate.cs" />
+     <Compile Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\Core\IStateChanged.cs" />
      <Folder Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\SceneTransition" />
      <Folder Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime" />
      <None Include="Assets\QFramework\Extensions\3rd\Unidux\Scripts\Runtime\QF.Redux.asmdef" />
@@ -282,6 +282,9 @@
      <Reference Include="Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
      </Reference>
+     <Reference Include="ProtobufNet">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
@@ -294,17 +297,14 @@
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <Reference Include="DOTween">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="ProtobufNet">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

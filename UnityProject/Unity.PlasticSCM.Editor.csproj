@@ -55,9 +55,9 @@
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\Tree\TableViewOperations.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\History\HistorySelection.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Gluon\UpdateReport\UpdateReportListHeaderState.cs" />
-     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\PlasticDialog.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Inspector\DrawInspectorOperations.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\Tree\TreeHeaderColumns.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\PlasticDialog.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\MeasureMaxWidth.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\WebApi\ChangesetFromCollabCommitResponse.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\Errors\ErrorListViewItem.cs" />
@@ -99,9 +99,9 @@
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\AutoRefresh.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\StatusBar\StatusBar.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\History\HistoryTab.cs" />
-     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\UnityConstants.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\SSOSignUpPanel.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Gluon\UpdateProgress.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\UnityConstants.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\DownloadPlasticExeWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\GUIActionRunner.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\WebApi\WebRestApiClient.cs" />
@@ -189,9 +189,9 @@
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Diff\DiffTreeViewMenu.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\PlasticPlugin.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Changesets\ChangesetsTab_Operations.cs" />
-     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\EnumPopupSetting.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\CloudEditionWelcomeWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoryListViewItem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\EnumPopupSetting.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Help\HelpPanel.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesTreeHeaderState.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\PendingChanges\DrawCommentTextArea.cs" />
@@ -260,8 +260,8 @@
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\ChangeCategoryTreeViewItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\ParentWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\UI\EditorProgressBar.cs" />
-     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\MissingEncryptionPasswordPromptHandler.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\WaitingSignInPanel.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Configuration\MissingEncryptionPasswordPromptHandler.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Welcome\GetInstallerTmpFileName.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\Changesets\ChangesetsViewMenu.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.17.7\Editor\PlasticSCM\Views\History\SaveAction.cs" />
@@ -1106,13 +1106,13 @@
       <Project>{406db75e-4363-3498-0f7e-acffc38718cf}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{af8b9caf-cc1e-8df9-07cf-142efc8a0c38}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

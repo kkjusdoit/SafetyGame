@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using QFramework;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Game : MonoBehaviour
 {
     [SerializeField] private Transform BottomTrans;
     [SerializeField] private Transform MidTrans;
     [SerializeField] private Transform TopTrans;
+    private ResLoader mResLoader = ResLoader.Allocate();
 
 
     private int CurLevel = 1;
@@ -18,7 +19,7 @@ public class Game : MonoBehaviour
 
     private RectTransform wrongTrans = null;
 
-    private int findNum = 0;
+    private int _findNum = 0;
     //private bool isShowButton = false;
 
     Transform panelTrans;  //界面
@@ -30,6 +31,19 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        
+        ResKit.Init();
+        
+        // 通过资源名 + 类型搜索并加载资源（更方便）
+        var prefab = mResLoader.LoadSync<GameObject>("UIStartPanel");
+        var gameObj = Instantiate(prefab);
+        gameObj.name = "这是使用通过 AssetName 加载的对象";
+
+        // // 通过 AssetBundleName 和 资源名搜索并加载资源（更精确）
+        // prefab = mResLoader.LoadSync<GameObject>("assetobj_prefab", "AssetObj");
+        // gameObj = Instantiate(prefab);
+        // gameObj.name = "这是使用通过 AssetName  和 AssetBundle 加载的对象";
+        //
         //加载panel
         ShowPanel();
         InvokeRepeating("IncrementTime", 1f, 1f);
@@ -41,8 +55,8 @@ public class Game : MonoBehaviour
         {
             string prefabName = "Panel" + CurLevel.ToString();
             riskInfoList = RiskInfo.RiskTexts[CurLevel - 1];
-            string assetPath = string.Format("Panel/Levels/{0}", prefabName);
-            LoadPanel(assetPath, BottomTrans, ref panelTrans);
+            // string assetPath = string.Format("Panel/Levels/{0}", prefabName);
+            LoadPanel(prefabName, BottomTrans, ref panelTrans);
             if (panelTrans == null)
             {
                 Debug.LogError("load panel failed");
@@ -52,7 +66,7 @@ public class Game : MonoBehaviour
             //show level info
             if (levelInfoTrans == null)
             {
-                LoadPanel("Panel/LevelInfo", MidTrans, ref levelInfoTrans);
+                LoadPanel("LevelInfo", MidTrans, ref levelInfoTrans);
             }
             //update level info
             UpdateLevelInfo();
@@ -76,7 +90,7 @@ public class Game : MonoBehaviour
 
     private void Reset()
     {
-        findNum = 0;
+        _findNum = 0;
         time = 0;
         IncrementTime();
     }
@@ -143,7 +157,7 @@ public class Game : MonoBehaviour
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale /= 2;
 
-            findNum += 1;
+            _findNum += 1;
 
             //更新关卡信息
             UpdateLevelInfo(v);
@@ -157,7 +171,7 @@ public class Game : MonoBehaviour
 
 
             //todolkk:12通关，恭喜
-            if (findNum >= 1)//riskInfoList.Count)
+            if (_findNum >= 1)//riskInfoList.Count)
             {
                 //panelTrans.Find("RawImage").gameObject.SetActive(true); 
                 OnLevelPass();
@@ -175,13 +189,13 @@ public class Game : MonoBehaviour
         }
 
         Text curFindNum = levelInfoTrans.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
-        curFindNum.text = $"{findNum}/{riskInfoList.Count}";
+        curFindNum.text = $"{_findNum}/{riskInfoList.Count}";
 
         Text levelTxt = levelInfoTrans.Find("Image/CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
 
         Slider slider = levelInfoTrans.Find("Image/Slider").GetComponent<Slider>();
-        slider.value = findNum;
+        slider.value = _findNum;
 
         Transform rightTipTrans = levelInfoTrans.Find("Image/Text_RightTip");
         if (index >= 0)
@@ -234,7 +248,7 @@ public class Game : MonoBehaviour
     {
         if (passTrans == null)
         {
-            LoadPanel("Panel/PassPanel", TopTrans, ref passTrans);
+            LoadPanel("PassPanel", TopTrans, ref passTrans);
             var btn = passTrans.Find("Button").GetComponent<Button>();
             btn.onClick.AddListener(() => GoToNextLevel());
         }
@@ -315,10 +329,9 @@ public class Game : MonoBehaviour
 
     void LoadPanel(string assetPath, Transform parent, ref Transform panelTrans)
     {
-
-        GameObject obj = Resources.Load<GameObject>(assetPath);
+        var prefab = mResLoader.LoadSync<GameObject>(assetPath);
+        var go = Instantiate(prefab);
         Debug.Log("asset loaded: " + assetPath);
-        GameObject go = Instantiate(obj);
         var trans = go.transform;
         trans.SetParent(parent, false);
         panelTrans = trans;

@@ -42,17 +42,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\UIElementCodeTemplate.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Util.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\UIPanelTemplate.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\UISerializer.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\UIKitSetttingData.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\UICodeGenerator.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\IBaseTemplate.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\ILRuntimePanelCodeTemplate.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\BindCollector.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\UIPanelDesignerTemplate.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Data\ElementCodeData.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\UIPanelTemplate.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\UIKitSetttingData.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\ILRuntimePanelCodeTemplate.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\UIPanelDesignerTemplate.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Data\PanelCodeData.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Util.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Templates\IBaseTemplate.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\BindCollector.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\UICodeGenerator.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\UIKitSettingView.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Editor\UIKitHierarchyMenu.cs" />
      <Folder Include="Assets\QFramework\Toolkits\UIKit\Editor\CodeGen\CodeGen\Data" />
@@ -341,14 +341,23 @@
      <Reference Include="UnityEditor.UWP.Extensions">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1c1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Markdig">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="ProtobufNet">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.YamlDotNet">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\Editor\DOTweenEditor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
@@ -374,26 +383,17 @@
      <Reference Include="log4netPlastic">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <Reference Include="DOTween">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="Markdig">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
-     </Reference>
-     <Reference Include="ProtobufNet">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTweenEditor">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\Editor\DOTweenEditor.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -810,13 +810,13 @@
       <Project>{406db75e-4363-3498-0f7e-acffc38718cf}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{af8b9caf-cc1e-8df9-07cf-142efc8a0c38}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

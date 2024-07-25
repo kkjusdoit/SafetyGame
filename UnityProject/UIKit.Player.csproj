@@ -41,46 +41,46 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UIPointerUpEventListener.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIScrollPageMark.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\IManager.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMgrID.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMgrBehaviour.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Empty4Raycast.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIPanelStack.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIScrollPage.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UIRectTransform.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIManager.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\IMsg.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIKit.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIRoot.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\MsgSpan.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Helper\InputFieldEnterSubmitTrigger.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMonoBehaviour.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\PanelSearchKeys.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UISpriteAnimation.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UIPointerDownEventListener.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIDefaultPanel.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIComponent.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMsgCenter.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Util\UIEffectHelper.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UILevel.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\PanelInfo.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Hide.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\PanelOpenType.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Util\UIEventListener.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIManager.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIKit.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\MsgSpan.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIDefaultPanel.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIElementList.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\DontDestroyOnLoad.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIMark.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIKitConfig.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\QUICameraUtil.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIElement.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIPanelTable.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\PanelOpenType.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\IPanel.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Util\UIEventListener.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Script\UIPanelTester.cs" />
-     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Deprecated.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIPanel.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIScrollPageMark.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMgrID.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Empty4Raycast.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIPanelStack.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIScrollPage.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\IMsg.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UISpriteAnimation.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers\QMsgCenter.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Hide.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIKitConfig.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\QUICameraUtil.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Deprecated.cs" />
      <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Util\CollisionTriggerListener.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UIPointerUpEventListener.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Extension\UIRectTransform.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIRoot.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\Component\UIComponent.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIMark.cs" />
+     <Compile Include="Assets\QFramework\Toolkits\UIKit\Scripts\IPanel.cs" />
      <Folder Include="Assets\QFramework\Toolkits\UIKit\Scripts\ManagerOfManagers" />
      <Folder Include="Assets\QFramework\Toolkits\UIKit\Scripts" />
      <None Include="Assets\QFramework\Toolkits\UIKit\Scripts\UIKit.asmdef" />
@@ -288,6 +288,9 @@
      <Reference Include="Newtonsoft.Json">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
      </Reference>
+     <Reference Include="ProtobufNet">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
@@ -300,17 +303,14 @@
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <Reference Include="DOTween">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="ProtobufNet">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\ProtobufNet\ProtobufNet.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Assets\QFramework\Extensions\3rd\DOTween\DOTween.dll</HintPath>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>G:\kkjusdoit\SafetyGame\UnityProject\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

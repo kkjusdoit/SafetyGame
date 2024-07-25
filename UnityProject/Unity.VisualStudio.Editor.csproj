@@ -57,8 +57,8 @@
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Messaging\Serializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\ProjectGeneration\ProjectProperties.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\ProjectGeneration\FileIOProvider.cs" />
-     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Testing\TestRunnerCallbacks.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Testing\TestAdaptor.cs" />
+     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Testing\TestRunnerCallbacks.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\UnityInstallation.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Messaging\Deserializer.cs" />
      <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.16\Editor\Testing\TestResultAdaptor.cs" />
@@ -778,13 +778,13 @@
       <Project>{406db75e-4363-3498-0f7e-acffc38718cf}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{af8b9caf-cc1e-8df9-07cf-142efc8a0c38}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{146a3af0-a58c-7c51-138e-8fa414f21e83}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
