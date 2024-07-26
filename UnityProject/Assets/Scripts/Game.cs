@@ -33,11 +33,6 @@ public class Game : MonoBehaviour
     {
         
         ResKit.Init();
-        
-        // 通过资源名 + 类型搜索并加载资源（更方便）
-        var prefab = mResLoader.LoadSync<GameObject>("UIStartPanel");
-        var gameObj = Instantiate(prefab);
-        gameObj.name = "这是使用通过 AssetName 加载的对象";
 
         // // 通过 AssetBundleName 和 资源名搜索并加载资源（更精确）
         // prefab = mResLoader.LoadSync<GameObject>("assetobj_prefab", "AssetObj");
