@@ -143,6 +143,11 @@ public class Game : MonoBehaviour
         {
             return;
         }
+        if (passTrans != null && passTrans.gameObject.activeSelf)
+        {
+            Debug.LogError("passTrans.gameObject");
+            return;
+        }
         Debug.Log("on click : " + v);
         if (transform.Find("right") == null)
         {
@@ -156,14 +161,6 @@ public class Game : MonoBehaviour
 
             //更新关卡信息
             UpdateLevelInfo(v);
-
-
-            //string fieldname = string.Format("risk_{0}_info", v);
-            //Type type = typeof(Level2);
-            //FieldInfo field = type.GetField(fieldname, BindingFlags.Static | BindingFlags.Public);
-            //string value = (string)field.GetValue(null);
-            //Debug.Log($"{fieldname}{ value}");
-
 
             //todolkk:12通关，恭喜
             if (_findNum >= 1)//riskInfoList.Count)
@@ -245,12 +242,19 @@ public class Game : MonoBehaviour
         {
             LoadPanel("PassPanel", TopTrans, ref passTrans);
             var btn = passTrans.Find("Button").GetComponent<Button>();
+
             btn.onClick.AddListener(() => GoToNextLevel());
         }
         else
         {
             passTrans.gameObject.SetActive(true);
             passTrans.SetAsLastSibling();
+        }
+
+        if (CurLevel < RiskInfo.RiskTexts.Count) return;
+        {
+            var btn = passTrans.Find("Button").GetComponent<Button>();
+            btn.gameObject.SetActive(false);
         }
     }
     private void GoToNextLevel()
