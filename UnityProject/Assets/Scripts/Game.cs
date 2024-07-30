@@ -180,16 +180,16 @@ public class Game : MonoBehaviour
             return;
         }
 
-        Text curFindNum = levelInfoTrans.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
+        Text curFindNum = levelInfoTrans.Find("Slider/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
         curFindNum.text = $"{_findNum}/{riskInfoList.Count}";
 
-        Text levelTxt = levelInfoTrans.Find("Image/CurLevelText").GetComponent<Text>();
+        Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
 
-        Slider slider = levelInfoTrans.Find("Image/Slider").GetComponent<Slider>();
+        Slider slider = levelInfoTrans.Find("Slider").GetComponent<Slider>();
         slider.value = _findNum;
 
-        Transform rightTipTrans = levelInfoTrans.Find("Image/Text_RightTip");
+        Transform rightTipTrans = levelInfoTrans.Find("Slider/Text_RightTip");
         if (index >= 0)
         {
             rightTipTrans.gameObject.SetActive(true);
@@ -227,7 +227,7 @@ public class Game : MonoBehaviour
                 return;
             }
 
-            Text curFindNum = levelInfoTrans.Find("Image/CountDownText").GetComponent<Text>();
+            Text curFindNum = levelInfoTrans.Find("CountDownText").GetComponent<Text>();
             curFindNum.text = $"已用时：{time}";
             time++;
         }
