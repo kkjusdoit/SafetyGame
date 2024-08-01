@@ -163,7 +163,7 @@ public class Game : MonoBehaviour
             UpdateLevelInfo(v);
 
             //todolkk:12通关，恭喜
-            if (_findNum >= 1)//riskInfoList.Count)
+            if (_findNum >= riskInfoList.Count)
             {
                 //panelTrans.Find("RawImage").gameObject.SetActive(true); 
                 OnLevelPass();

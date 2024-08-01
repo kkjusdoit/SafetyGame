@@ -12,7 +12,7 @@ public class BuildAssetBundle
     /// <summary>
     /// 打包生成所有的AssetBundles（包）
     /// </summary>
-    [MenuItem("AssetBundleTools/BuildAllAssetBundles")]
+    // [MenuItem("AssetBundleTools/BuildAllAssetBundles")]
     public static void BuildAllAB()
     {
         // 打包AB输出路径
