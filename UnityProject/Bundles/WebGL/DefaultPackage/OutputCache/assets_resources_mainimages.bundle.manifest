@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 4249085349
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 927a7f29c6e845556ec24ca3d5060b1b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/MainImages/6_quiz4_26.png
+- Assets/Resources/MainImages/xxx4_shop_floor_13.jpg
+- Assets/Resources/MainImages/5_quiz5_27.jpg
+- Assets/Resources/MainImages/8_quiz1_12.png
+- Assets/Resources/MainImages/3_mechanical_workshop9harzards.jpg
+- Assets/Resources/MainImages/7_quiz2_8.jpg
+- Assets/Resources/MainImages/2_Office14Hazards.png
+- Assets/Resources/MainImages/1_A_Fun_and_Effective_Way_to_Spot_Hazards_in_the_Workplace.png
+Dependencies: []

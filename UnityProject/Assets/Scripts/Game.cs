@@ -1,14 +1,19 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using QFramework;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
+using YooAsset;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private Transform BottomTrans;
     [SerializeField] private Transform MidTrans;
     [SerializeField] private Transform TopTrans;
+    private ResLoader mResLoader = ResLoader.Allocate();
 
 
     private int CurLevel = 1;
@@ -18,7 +23,7 @@ public class Game : MonoBehaviour
 
     private RectTransform wrongTrans = null;
 
-    private int findNum = 0;
+    private int _findNum = 0;
     //private bool isShowButton = false;
 
     Transform panelTrans;  //界面
@@ -28,31 +33,80 @@ public class Game : MonoBehaviour
 
     public float time;
 
-    private void Start()
+    private ResourcePackage package;
+
+    private IEnumerator Start()
     {
+        yield return InitYooAsset();
+        
+        // StartCoroutine(LoadBundle("level1" ,"LevelInfo"));
+        // ResKit.Init();
+        Debug.Log("start load");
+        
+        var op = package.RequestPackageVersionAsync();
+
+        yield return op;
+        yield return package.UpdatePackageManifestAsync(op.PackageVersion);
+
         //加载panel
-        ShowPanel();
+        yield return ShowPanel();
         InvokeRepeating("IncrementTime", 1f, 1f);
+        
+
+        
     }
 
-    private void ShowPanel()
+    private IEnumerator InitYooAsset()
+    {
+        // 初始化资源系统
+        YooAssets.Initialize();
+        package = YooAssets.CreatePackage("DefaultPackage");
+
+        //// 获取指定的资源包，如果没有找到会报错
+        package = YooAssets.GetPackage("DefaultPackage");
+        // 创建默认的资源包
+        // 设置该资源包为默认的资源包，可以使用YooAssets相关加载接口加载该资源包内容。
+        YooAssets.SetDefaultPackage(package);
+        
+
+        var webFileSystem = FileSystemParameters.CreateDefaultWebFileSystemParameters();
+        var initParameters = new WebPlayModeParameters();
+        initParameters.WebFileSystemParameters = webFileSystem;
+        var initOperation = package.InitializeAsync(initParameters);
+        yield return initOperation;
+    
+        if(initOperation.Status == EOperationStatus.Succeed)
+            Debug.Log("资源包初始化成功！");
+        else 
+            Debug.LogError($"资源包初始化失败：{initOperation.Error}");
+
+        //
+        // if(initOperation.Status == EOperationStatus.Succeed)
+        //     Debug.Log("资源包初始化成功！");
+        // else 
+        //     Debug.LogError($"资源包初始化失败：{initOperation.Error}");
+    }
+    
+
+
+    private IEnumerator ShowPanel()
     {
         if (panelTrans == null)
         {
             string prefabName = "Panel" + CurLevel.ToString();
             riskInfoList = RiskInfo.RiskTexts[CurLevel - 1];
-            string assetPath = string.Format("Panel/Levels/{0}", prefabName);
-            LoadPanel(assetPath, BottomTrans, ref panelTrans);
+            // string assetPath = string.Format("Panel/Levels/{0}", prefabName);
+            yield return LoadPanel(prefabName, BottomTrans, (loadedTrasform) => panelTrans = loadedTrasform);
             if (panelTrans == null)
             {
                 Debug.LogError("load panel failed");
-                return;
+                yield return null;
             }
 
             //show level info
             if (levelInfoTrans == null)
             {
-                LoadPanel("Panel/LevelInfo", MidTrans, ref levelInfoTrans);
+                yield return LoadPanel("LevelInfo", MidTrans, (trans) => levelInfoTrans = trans);
             }
             //update level info
             UpdateLevelInfo();
@@ -76,7 +130,7 @@ public class Game : MonoBehaviour
 
     private void Reset()
     {
-        findNum = 0;
+        _findNum = 0;
         time = 0;
         IncrementTime();
     }
@@ -134,6 +188,11 @@ public class Game : MonoBehaviour
         {
             return;
         }
+        if (passTrans != null && passTrans.gameObject.activeSelf)
+        {
+            Debug.LogError("passTrans.gameObject");
+            return;
+        }
         Debug.Log("on click : " + v);
         if (transform.Find("right") == null)
         {
@@ -143,21 +202,13 @@ public class Game : MonoBehaviour
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale /= 2;
 
-            findNum += 1;
+            _findNum += 1;
 
             //更新关卡信息
             UpdateLevelInfo(v);
 
-
-            //string fieldname = string.Format("risk_{0}_info", v);
-            //Type type = typeof(Level2);
-            //FieldInfo field = type.GetField(fieldname, BindingFlags.Static | BindingFlags.Public);
-            //string value = (string)field.GetValue(null);
-            //Debug.Log($"{fieldname}{ value}");
-
-
             //todolkk:12通关，恭喜
-            if (findNum >= 1)//riskInfoList.Count)
+            if (_findNum >= riskInfoList.Count)
             {
                 //panelTrans.Find("RawImage").gameObject.SetActive(true); 
                 OnLevelPass();
@@ -174,16 +225,16 @@ public class Game : MonoBehaviour
             return;
         }
 
-        Text curFindNum = levelInfoTrans.Find("Image/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
-        curFindNum.text = $"{findNum}/{riskInfoList.Count}";
+        Text curFindNum = levelInfoTrans.Find("Slider/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
+        curFindNum.text = $"{_findNum}/{riskInfoList.Count}";
 
-        Text levelTxt = levelInfoTrans.Find("Image/CurLevelText").GetComponent<Text>();
+        Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
 
-        Slider slider = levelInfoTrans.Find("Image/Slider").GetComponent<Slider>();
-        slider.value = findNum;
+        Slider slider = levelInfoTrans.Find("Slider").GetComponent<Slider>();
+        slider.value = _findNum;
 
-        Transform rightTipTrans = levelInfoTrans.Find("Image/Text_RightTip");
+        Transform rightTipTrans = levelInfoTrans.Find("Slider/Text_RightTip");
         if (index >= 0)
         {
             rightTipTrans.gameObject.SetActive(true);
@@ -221,7 +272,7 @@ public class Game : MonoBehaviour
                 return;
             }
 
-            Text curFindNum = levelInfoTrans.Find("Image/CountDownText").GetComponent<Text>();
+            Text curFindNum = levelInfoTrans.Find("CountDownText").GetComponent<Text>();
             curFindNum.text = $"已用时：{time}";
             time++;
         }
@@ -234,14 +285,21 @@ public class Game : MonoBehaviour
     {
         if (passTrans == null)
         {
-            LoadPanel("Panel/PassPanel", TopTrans, ref passTrans);
+            LoadPanel("PassPanel", TopTrans, (trans) =>  passTrans = trans);
             var btn = passTrans.Find("Button").GetComponent<Button>();
+
             btn.onClick.AddListener(() => GoToNextLevel());
         }
         else
         {
             passTrans.gameObject.SetActive(true);
             passTrans.SetAsLastSibling();
+        }
+
+        if (CurLevel < RiskInfo.RiskTexts.Count) return;
+        {
+            var btn = passTrans.Find("Button").GetComponent<Button>();
+            btn.gameObject.SetActive(false);
         }
     }
     private void GoToNextLevel()
@@ -313,40 +371,34 @@ public class Game : MonoBehaviour
     }
 
 
-    void LoadPanel(string assetPath, Transform parent, ref Transform panelTrans)
+    IEnumerator LoadPanel(string assetName, Transform parent, Action<Transform> onLoaded)
     {
-
-        GameObject obj = Resources.Load<GameObject>(assetPath);
-        Debug.Log("asset loaded: " + assetPath);
-        GameObject go = Instantiate(obj);
+        AssetHandle handle = package.LoadAssetAsync<GameObject>(assetName);
+        yield return handle;
+        GameObject go = handle.InstantiateSync();
+        Debug.Log($"Prefab name is {go.name}");
         var trans = go.transform;
         trans.SetParent(parent, false);
-        panelTrans = trans;
-
-        //string bundlePath = "Assets/AssetBundles/level" + CurLevel.ToString();
-        //AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromFile(bundlePath);
-
-        //if (myLoadedAssetBundle == null)
-        //{
-        //    Debug.Log("Failed to load AssetBundle!" + AssetName);
-        //    return ;
-        //}
-
-        //// Load an asset from the bundle
-        //GameObject obj = myLoadedAssetBundle.LoadAsset<GameObject>(AssetName);
-        //if (obj == null)
-        //{
-        //    Debug.Log("Failed to LoadAsset!  " + AssetName);
-        //    return;
-        //}
-        // Instantiate it
-        // Always unload assetBundles when you are done with them.
-        //myLoadedAssetBundle.Unload(false);
+        onLoaded?.Invoke(trans);
     }
-
+    
+    
     private void OnDestroy()
     {
-        //
+        //销毁资源包对象
+        DestroyPackage();
     }
-
+    private IEnumerator DestroyPackage()
+    {
+        // 先销毁资源包
+        package = YooAssets.GetPackage("DefaultPackage");
+        DestroyOperation operation = package.DestroyAsync();
+        yield return null;
+    
+        // 然后移除资源包
+        if (YooAssets.RemovePackage("DefaultPackage"))
+        {
+            Debug.Log("移除成功！");
+        }
+    }
 }

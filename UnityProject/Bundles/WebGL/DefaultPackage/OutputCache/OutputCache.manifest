@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1419169299
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets_resources_icons.bundle
+      Dependencies: {}
+    Info_1:
+      Name: assets_resources_mainimages.bundle
+      Dependencies: {}
+    Info_2:
+      Name: assets_resources_panel.bundle
+      Dependencies:
+        Dependency_0: assets_resources_icons.bundle
+        Dependency_1: share_assets_ttf.bundle
+    Info_3:
+      Name: assets_resources_panel_levels.bundle
+      Dependencies:
+        Dependency_0: assets_resources_icons.bundle
+        Dependency_1: assets_resources_mainimages.bundle
+    Info_4:
+      Name: share_assets_ttf.bundle
+      Dependencies: {}
