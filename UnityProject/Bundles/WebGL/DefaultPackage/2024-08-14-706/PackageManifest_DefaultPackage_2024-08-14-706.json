@@ -1,0 +1,154 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 2,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2024-08-14-706",
+    "AssetList": [
+        {
+            "Address": "ImgRight",
+            "AssetPath": "Assets/Resources/Panel/ImgRight.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "ImgWrong",
+            "AssetPath": "Assets/Resources/Panel/ImgWrong.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "LevelInfo",
+            "AssetPath": "Assets/Resources/Panel/LevelInfo.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "PassPanel",
+            "AssetPath": "Assets/Resources/Panel/PassPanel.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "Panel1",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel1.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel2",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel2.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel3",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel3.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel4",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel4.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel4_English",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel4_English.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel5",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel5.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel6",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel6.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
+            "Address": "Panel7",
+            "AssetPath": "Assets/Resources/Panel/Levels/Panel7.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_resources_icons.bundle",
+            "UnityCRC": 1824364140,
+            "FileHash": "d400c48d844ff093a26e5554861dbd9c",
+            "FileCRC": "6b0303be",
+            "FileSize": 54685,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_resources_mainimages.bundle",
+            "UnityCRC": 4249085349,
+            "FileHash": "87dc32194efb0b00f69b95baf0c038c9",
+            "FileCRC": "eeaaa514",
+            "FileSize": 4670783,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_resources_panel.bundle",
+            "UnityCRC": 3568429865,
+            "FileHash": "aa233f6345b7e8bba495a41b6e7b0316",
+            "FileCRC": "cd7772d6",
+            "FileSize": 24413,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                0,
+                4
+            ]
+        },
+        {
+            "BundleName": "assets_resources_panel_levels.bundle",
+            "UnityCRC": 3316466509,
+            "FileHash": "92f39bdbf2612ea68b35779df09f518b",
+            "FileCRC": "a15808f5",
+            "FileSize": 43620,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                0,
+                1
+            ]
+        },
+        {
+            "BundleName": "share_assets_ttf.bundle",
+            "UnityCRC": 588020170,
+            "FileHash": "3340c47a49b6fb5b29ee8c15387f58c1",
+            "FileCRC": "5142f46f",
+            "FileSize": 5399107,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}
