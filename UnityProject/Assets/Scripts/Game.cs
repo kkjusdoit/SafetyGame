@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using QFramework;
+// using QFramework;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -13,8 +13,6 @@ public class Game : MonoBehaviour
     [SerializeField] private Transform BottomTrans;
     [SerializeField] private Transform MidTrans;
     [SerializeField] private Transform TopTrans;
-    private ResLoader mResLoader = ResLoader.Allocate();
-
 
     private int CurLevel = 1;
     public GameObject wrongGo;
