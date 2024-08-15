@@ -49,7 +49,7 @@ MonoBehaviour:
         CollectorGUID: 909e1458a6a7446bc947e02d966ee01f
         CollectorType: 0
         AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
