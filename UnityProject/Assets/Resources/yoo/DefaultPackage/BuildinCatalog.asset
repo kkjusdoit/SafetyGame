@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: BuildinCatalog
   m_EditorClassIdentifier: 
   PackageName: DefaultPackage
-  PackageVersion: 2024-08-14-706
+  PackageVersion: 2024-08-15-531
   Wrappers:
   - BundleGUID: d400c48d844ff093a26e5554861dbd9c
     FileName: assets_resources_icons_d400c48d844ff093a26e5554861dbd9c.bundle
   - BundleGUID: 87dc32194efb0b00f69b95baf0c038c9
     FileName: assets_resources_mainimages_87dc32194efb0b00f69b95baf0c038c9.bundle
-  - BundleGUID: aa233f6345b7e8bba495a41b6e7b0316
-    FileName: assets_resources_panel_aa233f6345b7e8bba495a41b6e7b0316.bundle
-  - BundleGUID: 92f39bdbf2612ea68b35779df09f518b
-    FileName: assets_resources_panel_levels_92f39bdbf2612ea68b35779df09f518b.bundle
+  - BundleGUID: b2f495b4b53484388007ee79b0b06c43
+    FileName: assets_resources_panel_b2f495b4b53484388007ee79b0b06c43.bundle
+  - BundleGUID: 9e98e821a0fe2f5a6395bcd0377b03e4
+    FileName: assets_resources_panel_levels_9e98e821a0fe2f5a6395bcd0377b03e4.bundle
   - BundleGUID: 3340c47a49b6fb5b29ee8c15387f58c1
     FileName: share_assets_ttf_3340c47a49b6fb5b29ee8c15387f58c1.bundle

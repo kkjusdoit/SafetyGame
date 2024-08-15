@@ -229,8 +229,8 @@ public class Game : MonoBehaviour
         Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
 
-        Slider slider = levelInfoTrans.Find("Slider").GetComponent<Slider>();
-        slider.value = _findNum;
+        // Slider slider = levelInfoTrans.Find("Slider").GetComponent<Slider>();
+        // slider.value = _findNum;
 
         Transform rightTipTrans = levelInfoTrans.Find("Slider/Text_RightTip");
         if (index >= 0)
@@ -279,11 +279,11 @@ public class Game : MonoBehaviour
 
 
 
-    private void OnLevelPass()
+    private IEnumerator OnLevelPass()
     {
         if (passTrans == null)
         {
-            LoadPanel("PassPanel", TopTrans, (trans) =>  passTrans = trans);
+            yield return LoadPanel("PassPanel", TopTrans, (trans) =>  passTrans = trans);
             var btn = passTrans.Find("Button").GetComponent<Button>();
 
             btn.onClick.AddListener(() => GoToNextLevel());
@@ -294,7 +294,8 @@ public class Game : MonoBehaviour
             passTrans.SetAsLastSibling();
         }
 
-        if (CurLevel < RiskInfo.RiskTexts.Count) return;
+        if (CurLevel < RiskInfo.RiskTexts.Count) 
+            yield return null;
         {
             var btn = passTrans.Find("Button").GetComponent<Button>();
             btn.gameObject.SetActive(false);
