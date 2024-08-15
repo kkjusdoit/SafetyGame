@@ -122,12 +122,13 @@ public class Game : MonoBehaviour
         {
             Destroy(panelTrans.gameObject);
             panelTrans = null;
-            ShowPanel();
+            StartCoroutine(ShowPanel());
         }
     }
 
     private void Reset()
     {
+        Debug.Log("reset: " + _findNum);
         _findNum = 0;
         time = 0;
         IncrementTime();
@@ -201,6 +202,7 @@ public class Game : MonoBehaviour
             go.transform.localScale /= 2;
 
             _findNum += 1;
+            Debug.Log("find num:" + _findNum);
 
             //更新关卡信息
             UpdateLevelInfo(v);
@@ -209,7 +211,7 @@ public class Game : MonoBehaviour
             if (_findNum >= riskInfoList.Count)
             {
                 //panelTrans.Find("RawImage").gameObject.SetActive(true); 
-                OnLevelPass();
+                StartCoroutine(OnLevelPass());
             }
         }
     }
@@ -224,7 +226,9 @@ public class Game : MonoBehaviour
         }
 
         Text curFindNum = levelInfoTrans.Find("Slider/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
-        curFindNum.text = $"{_findNum}/{riskInfoList.Count}";
+        var txt = $"{_findNum}/{riskInfoList.Count}";
+        curFindNum.text = txt;
+        Debug.Log("findNum/ total  " + txt);
 
         Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
@@ -277,16 +281,23 @@ public class Game : MonoBehaviour
 
     }
 
+    private void OnPassPanelLoaded(Transform trans)
+    {
+        passTrans = trans;
+        Debug.Log("load level pass succ");
+        var btn = passTrans.Find("Button").GetComponent<Button>();
+
+        btn.onClick.AddListener(() => GoToNextLevel());
+    }
+
 
 
     private IEnumerator OnLevelPass()
     {
         if (passTrans == null)
         {
-            yield return LoadPanel("PassPanel", TopTrans, (trans) =>  passTrans = trans);
-            var btn = passTrans.Find("Button").GetComponent<Button>();
+            yield return LoadPanel("PassPanel", TopTrans, OnPassPanelLoaded);
 
-            btn.onClick.AddListener(() => GoToNextLevel());
         }
         else
         {
@@ -294,8 +305,11 @@ public class Game : MonoBehaviour
             passTrans.SetAsLastSibling();
         }
 
-        if (CurLevel < RiskInfo.RiskTexts.Count) 
+        if (CurLevel < RiskInfo.RiskTexts.Count)
+        {
             yield return null;
+        }
+        else
         {
             var btn = passTrans.Find("Button").GetComponent<Button>();
             btn.gameObject.SetActive(false);
@@ -313,13 +327,13 @@ public class Game : MonoBehaviour
                 var btn = passTrans.Find("Button");
                 btn.gameObject.SetActive(false);
                 //全部通关
-
+                Debug.LogError("Congratualations all levels passed");
             }
 
         }
         else
         {
-            ShowPanel();
+            StartCoroutine(ShowPanel());
 
         }
 }
@@ -372,6 +386,7 @@ public class Game : MonoBehaviour
 
     IEnumerator LoadPanel(string assetName, Transform parent, Action<Transform> onLoaded)
     {
+        Debug.Log("begin load panel  " + assetName);
         AssetHandle handle = package.LoadAssetAsync<GameObject>(assetName);
         yield return handle;
         GameObject go = handle.InstantiateSync();
