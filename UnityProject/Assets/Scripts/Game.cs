@@ -210,7 +210,6 @@ public class Game : MonoBehaviour
             //todolkk:12通关，恭喜
             if (_findNum >= riskInfoList.Count)
             {
-                //panelTrans.Find("RawImage").gameObject.SetActive(true); 
                 StartCoroutine(OnLevelPass());
             }
         }
@@ -305,15 +304,9 @@ public class Game : MonoBehaviour
             passTrans.SetAsLastSibling();
         }
 
-        if (CurLevel < RiskInfo.RiskTexts.Count)
-        {
-            yield return null;
-        }
-        else
-        {
-            var btn = passTrans.Find("Button").GetComponent<Button>();
-            btn.gameObject.SetActive(false);
-        }
+        var isPassAll = CurLevel >= RiskInfo.RiskTexts.Count;
+        passTrans.Find("RawImage").gameObject.SetActive(isPassAll);
+        passTrans.Find("Button").gameObject.SetActive(!isPassAll);
     }
     private void GoToNextLevel()
     {
