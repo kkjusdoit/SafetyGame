@@ -59,17 +59,36 @@ public class Game : MonoBehaviour
         // 初始化资源系统
         YooAssets.Initialize();
         package = YooAssets.CreatePackage("DefaultPackage");
-
-        //// 获取指定的资源包，如果没有找到会报错
-        package = YooAssets.GetPackage("DefaultPackage");
         // 创建默认的资源包
         // 设置该资源包为默认的资源包，可以使用YooAssets相关加载接口加载该资源包内容。
         YooAssets.SetDefaultPackage(package);
         
+#if UNITY_EDITOR
+        
+            //注意：如果是原生文件系统选择EDefaultBuildPipeline.RawFileBuildPipeline
+            var buildPipeline = EDefaultBuildPipeline.BuiltinBuildPipeline; 
+            var simulateBuildResult = EditorSimulateModeHelper.SimulateBuild(buildPipeline, "DefaultPackage");
+            var editorFileSystem = FileSystemParameters.CreateDefaultEditorFileSystemParameters(simulateBuildResult);
+            var initParameters = new EditorSimulateModeParameters();
+            initParameters.EditorFileSystemParameters = editorFileSystem;
+            var initOperation = package.InitializeAsync(initParameters);
 
+            yield return initOperation;
+            
+            if(initOperation.Status == EOperationStatus.Succeed)
+                Debug.Log("资源包初始化成功！");
+            else 
+                Debug.LogError($"资源包初始化失败：{initOperation.Error}");
+        
+        
+#else
+        
         var webFileSystem = FileSystemParameters.CreateDefaultWebFileSystemParameters();
         var initParameters = new WebPlayModeParameters();
         initParameters.WebFileSystemParameters = webFileSystem;
+        
+
+
         var initOperation = package.InitializeAsync(initParameters);
         yield return initOperation;
     
@@ -83,6 +102,7 @@ public class Game : MonoBehaviour
         //     Debug.Log("资源包初始化成功！");
         // else 
         //     Debug.LogError($"资源包初始化失败：{initOperation.Error}");
+#endif
     }
     
 
