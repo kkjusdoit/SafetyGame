@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 592441387171588130}
   - component: {fileID: 5801654759197085909}
   - component: {fileID: 1846808837247192820}
+  - component: {fileID: 2121817487418155998}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -322,3 +323,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u606D\u559C\u5B8C\u6210\n\n\u70B9\u51FB\u524D\u5F80\u4E0B\u4E00\u5173"
+--- !u!114 &2121817487418155998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697282683603418595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1

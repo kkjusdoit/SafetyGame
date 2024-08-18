@@ -18,7 +18,7 @@ public class Wrong : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("DelayedFunction", 3f); // Call the DelayedFunction() method with a 3-second delay
+        Invoke("DelayedFunction", 0.2f); // todo:3  Call the DelayedFunction() method with a 3-second delay
     }
 
     private void DelayedFunction()

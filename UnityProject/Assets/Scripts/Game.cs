@@ -36,22 +36,13 @@ public class Game : MonoBehaviour
     private IEnumerator Start()
     {
         yield return InitYooAsset();
-        
-        // StartCoroutine(LoadBundle("level1" ,"LevelInfo"));
-        // ResKit.Init();
-        Debug.Log("start load");
-        
         var op = package.RequestPackageVersionAsync();
-
         yield return op;
         yield return package.UpdatePackageManifestAsync(op.PackageVersion);
 
         //加载panel
         yield return ShowPanel();
         InvokeRepeating("IncrementTime", 1f, 1f);
-        
-
-        
     }
 
     private IEnumerator InitYooAsset()
@@ -212,7 +203,6 @@ public class Game : MonoBehaviour
             Debug.LogError("passTrans.gameObject");
             return;
         }
-        Debug.Log("on click : " + v);
         if (transform.Find("right") == null)
         {
             GameObject go = Instantiate(rightGo);
@@ -222,12 +212,11 @@ public class Game : MonoBehaviour
             go.transform.localScale /= 2;
 
             _findNum += 1;
-            Debug.Log("find num:" + _findNum);
 
             //更新关卡信息
             UpdateLevelInfo(v);
 
-            //todolkk:12通关，恭喜
+            //通关，恭喜
             if (_findNum >= riskInfoList.Count)
             {
                 StartCoroutine(OnLevelPass());
@@ -244,18 +233,15 @@ public class Game : MonoBehaviour
             return;
         }
 
-        Text curFindNum = levelInfoTrans.Find("Slider/Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
+        Text curFindNum = levelInfoTrans.Find("Text_LeftRisk/Text_LeftNum").GetComponent<Text>();
         var txt = $"{_findNum}/{riskInfoList.Count}";
         curFindNum.text = txt;
-        Debug.Log("findNum/ total  " + txt);
 
         Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
         levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
 
-        // Slider slider = levelInfoTrans.Find("Slider").GetComponent<Slider>();
-        // slider.value = _findNum;
 
-        Transform rightTipTrans = levelInfoTrans.Find("Slider/Text_RightTip");
+        Transform rightTipTrans = levelInfoTrans.Find("Text_LeftRisk/Text_RightTip");
         if (index >= 0)
         {
             rightTipTrans.gameObject.SetActive(true);
@@ -358,7 +344,6 @@ public class Game : MonoBehaviour
 
     private void ButtonAllClickHandler()
     {
-        Debug.Log("Mouse Position: " + Input.mousePosition);
         if (wrongTrans != null && wrongTrans.gameObject.activeSelf)
         {
             return;
@@ -371,8 +356,6 @@ public class Game : MonoBehaviour
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTransform, Input.mousePosition, null, out localMousePosition))
             {
-                Debug.Log("ButtonAllClickHandler" + localMousePosition);//���������Ϊ����
-
                 GameObject go = Instantiate(wrongGo, parentRectTransform.TransformPoint(localMousePosition), Quaternion.identity) as GameObject;
                 wrongTrans = go.GetComponent<RectTransform>();
                 wrongTrans.SetParent(parentRectTransform, false);
@@ -393,17 +376,14 @@ public class Game : MonoBehaviour
             }
 
         }
-        //wrongGo.transform.localPosition = Input.mousePosition;
     }
 
 
     IEnumerator LoadPanel(string assetName, Transform parent, Action<Transform> onLoaded)
     {
-        Debug.Log("begin load panel  " + assetName);
         AssetHandle handle = package.LoadAssetAsync<GameObject>(assetName);
         yield return handle;
         GameObject go = handle.InstantiateSync();
-        Debug.Log($"Prefab name is {go.name}");
         var trans = go.transform;
         trans.SetParent(parent, false);
         onLoaded?.Invoke(trans);
