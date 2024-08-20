@@ -117,6 +117,9 @@ public class Game : MonoBehaviour
             {
                 yield return LoadPanel("LevelInfo", MidTrans, (trans) => levelInfoTrans = trans);
             }
+            
+            Reset();
+
             //update level info
             UpdateLevelInfo();
 
@@ -125,7 +128,6 @@ public class Game : MonoBehaviour
 
             SetImageScale();
 
-            Reset();
 
 
         }
@@ -139,7 +141,6 @@ public class Game : MonoBehaviour
 
     private void Reset()
     {
-        Debug.Log("reset: " + _findNum);
         _findNum = 0;
         time = 0;
         IncrementTime();
@@ -313,6 +314,7 @@ public class Game : MonoBehaviour
         var isPassAll = CurLevel >= RiskInfo.RiskTexts.Count;
         passTrans.Find("RawImage").gameObject.SetActive(isPassAll);
         passTrans.Find("Button").gameObject.SetActive(!isPassAll);
+
     }
     private void GoToNextLevel()
     {
