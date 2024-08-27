@@ -53,26 +53,37 @@ public class Game : MonoBehaviour
         // 创建默认的资源包
         // 设置该资源包为默认的资源包，可以使用YooAssets相关加载接口加载该资源包内容。
         YooAssets.SetDefaultPackage(package);
-        
+        /*
 #if UNITY_EDITOR
-        
-            //注意：如果是原生文件系统选择EDefaultBuildPipeline.RawFileBuildPipeline
-            var buildPipeline = EDefaultBuildPipeline.BuiltinBuildPipeline; 
-            var simulateBuildResult = EditorSimulateModeHelper.SimulateBuild(buildPipeline, "DefaultPackage");
-            var editorFileSystem = FileSystemParameters.CreateDefaultEditorFileSystemParameters(simulateBuildResult);
-            var initParameters = new EditorSimulateModeParameters();
-            initParameters.EditorFileSystemParameters = editorFileSystem;
-            var initOperation = package.InitializeAsync(initParameters);
 
-            yield return initOperation;
-            
-            if(initOperation.Status == EOperationStatus.Succeed)
-                Debug.Log("资源包初始化成功！");
-            else 
-                Debug.LogError($"资源包初始化失败：{initOperation.Error}");
-        
-        
-#else
+        //注意：如果是原生文件系统选择EDefaultBuildPipeline.RawFileBuildPipeline
+        var buildPipeline = EDefaultBuildPipeline.BuiltinBuildPipeline;
+        var simulateBuildResult = EditorSimulateModeHelper.SimulateBuild(buildPipeline, "DefaultPackage");
+        var editorFileSystem = FileSystemParameters.CreateDefaultEditorFileSystemParameters(simulateBuildResult);
+        var initParameters = new EditorSimulateModeParameters();
+        initParameters.EditorFileSystemParameters = editorFileSystem;
+        var initOperation = package.InitializeAsync(initParameters);
+
+        yield return initOperation;
+
+        if (initOperation.Status == EOperationStatus.Succeed)
+            Debug.Log("资源包初始化成功！");
+        else
+            Debug.LogError($"资源包初始化失败：{initOperation.Error}");
+        */
+
+#if UNITY_ANDROID
+
+        var buildinFileSystem = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+        var initParameters = new OfflinePlayModeParameters();
+        initParameters.BuildinFileSystemParameters = buildinFileSystem;
+        var initOperation = package.InitializeAsync(initParameters);
+
+        yield return initOperation;
+
+        if (initOperation.Status == EOperationStatus.Succeed)
+            Debug.Log("资源包初始化成功！");
+#elif UNITY_WEBGL
         
         var webFileSystem = FileSystemParameters.CreateDefaultWebFileSystemParameters();
         var initParameters = new WebPlayModeParameters();
@@ -95,7 +106,7 @@ public class Game : MonoBehaviour
         //     Debug.LogError($"资源包初始化失败：{initOperation.Error}");
 #endif
     }
-    
+
 
 
     private IEnumerator ShowPanel()
@@ -117,7 +128,7 @@ public class Game : MonoBehaviour
             {
                 yield return LoadPanel("LevelInfo", MidTrans, (trans) => levelInfoTrans = trans);
             }
-            
+
             Reset();
 
             //update level info
@@ -163,7 +174,7 @@ public class Game : MonoBehaviour
             var trans = panelTrans.Find(str);
             if (trans == null)
             {
-                Debug.LogError("trans is null."  + str);
+                Debug.LogError("trans is null." + str);
 
             }
             if (trans.TryGetComponent<Button>(out var btn))
@@ -239,7 +250,7 @@ public class Game : MonoBehaviour
         curFindNum.text = txt;
 
         Text levelTxt = levelInfoTrans.Find("CurLevelText").GetComponent<Text>();
-        levelTxt.text = $"当前进行：第{CurLevel}关，请识别隐患并点击";
+        levelTxt.text = $"第{CurLevel}关：请识别隐患并点击";
 
 
         Transform rightTipTrans = levelInfoTrans.Find("Text_LeftRisk/Text_RightTip");
@@ -337,7 +348,7 @@ public class Game : MonoBehaviour
             StartCoroutine(ShowPanel());
 
         }
-}
+    }
 
     private void HidePanel()
     {
@@ -390,8 +401,8 @@ public class Game : MonoBehaviour
         trans.SetParent(parent, false);
         onLoaded?.Invoke(trans);
     }
-    
-    
+
+
     private void OnDestroy()
     {
         //销毁资源包对象
@@ -403,7 +414,7 @@ public class Game : MonoBehaviour
         package = YooAssets.GetPackage("DefaultPackage");
         DestroyOperation operation = package.DestroyAsync();
         yield return null;
-    
+
         // 然后移除资源包
         if (YooAssets.RemovePackage("DefaultPackage"))
         {
